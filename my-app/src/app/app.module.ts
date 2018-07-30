@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //component a-z
 import { AppComponent } from './app.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
