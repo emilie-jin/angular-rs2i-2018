@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr, 'fr');
 
 //module a-z
 import { CoreModule } from './core/core.module';
@@ -13,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //component a-z
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ItemComponent } from './shared/components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,7 @@ import { NavComponent } from './components/nav/nav.component';
     ItemsModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

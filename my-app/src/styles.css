@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* start style listComponent */
+.card{
+  margin-top: 1rem;
+}
+.state-alivrer{
+  color: #ff0000;
+}
+.state-encours{
+  color: #0051ff;
+}
+.state-livree{
+  color: #2cad66;
+}
+/* fin style listComponent */
