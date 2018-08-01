@@ -14,7 +14,13 @@
 /* fin style listComponent */
 
 /* start style nav */
-.active{
-  color : #a22cad;
+body .navbar-light .navbar-nav .nav-link{
+  min-width: 5rem;
+  text-align: center;
+}
+body .navbar-light .navbar-nav .nav-link.active{
+  color:#fff;
+  background: rgb(175, 174, 174);
+  border-radius: 5px;
 }
 /* fin style nav */

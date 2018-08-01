@@ -1,28 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { HomeComponent } from './home/components/home/home.component';
-import { LoginComponent } from './login/components/login/login.component';
-import { PageNotFoundComponent } from './page-not-found/containers/page-not-found/page-not-found.component';
-import { ListComponent } from './items/components/list/list.component';
-import { LivreesComponent } from './items/components/livrees/livrees.component';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'list', component: ListComponent },
-  { path: 'livrees', component: LivreesComponent },
+  { path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
   //   data: { title: 'Heroes List' }
   // },
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
 ];
 
 
@@ -30,9 +19,9 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   exports:[RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
