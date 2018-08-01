@@ -28,13 +28,13 @@ import { ItemComponent } from './shared/components/item/item.component';
   imports: [
     CoreModule,
     SharedModule,
+    AppRoutingModule,
     LoginModule,
     // HomeModule,
-    AppRoutingModule,
     BrowserModule,
     // ItemsModule,
-    PageNotFoundModule,
     NgbModule.forRoot(),
+    PageNotFoundModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]
