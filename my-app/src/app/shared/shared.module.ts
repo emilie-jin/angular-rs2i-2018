@@ -6,11 +6,13 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FilterByStatePipe } from './pipes/filter-by-state.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { StateDirective } from './directives/state.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe,StateDirective],
   exports: [NavComponent,ItemComponent,FilterByStatePipe],})

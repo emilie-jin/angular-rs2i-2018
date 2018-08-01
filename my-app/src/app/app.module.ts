@@ -7,6 +7,7 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 
 //module a-z
+import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { ItemsModule } from './items/items.module';
@@ -17,7 +18,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //component a-z
 import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
 import { ItemComponent } from './shared/components/item/item.component';
 
 @NgModule({
@@ -32,7 +32,8 @@ import { ItemComponent } from './shared/components/item/item.component';
     SharedModule,
     HomeModule,
     ItemsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]

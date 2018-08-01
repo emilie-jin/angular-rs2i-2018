@@ -12,3 +12,9 @@
   color: #2cad66;
 }
 /* fin style listComponent */
+
+/* start style nav */
+.active{
+  color : #a22cad;
+}
+/* fin style nav */
