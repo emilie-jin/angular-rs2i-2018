@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { RouterModule, Routes, Router, PreloadAllModules } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
+  },
+  {
+    path: 'items',
+    loadChildren: './items/items.module#ItemsModule',
+  },
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule',
   },
   // { path: 'hero/:id',      component: HeroDetailComponent },
   // {
@@ -19,7 +27,10 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      {
+        enableTracing: false,
+        preloadingStrategy: PreloadAllModules,
+      } // <-- debugging purposes only
     )
   ],
   exports:[RouterModule]

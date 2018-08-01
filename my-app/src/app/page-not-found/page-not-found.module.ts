@@ -7,8 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    PageNotFoundRoutingModule,
-    AppRoutingModule
+    PageNotFoundRoutingModule
   ],
   declarations: [PageNotFoundComponent]
 })

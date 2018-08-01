@@ -10,8 +10,8 @@ registerLocaleData(localeFr, 'fr');
 //module a-z
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
-import { ItemsModule } from './items/items.module';
+// import { HomeModule } from './home/home.module';
+// import { ItemsModule } from './items/items.module';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
@@ -29,10 +29,10 @@ import { ItemComponent } from './shared/components/item/item.component';
     CoreModule,
     SharedModule,
     LoginModule,
-    HomeModule,
+    // HomeModule,
     AppRoutingModule,
     BrowserModule,
-    ItemsModule,
+    // ItemsModule,
     PageNotFoundModule,
     NgbModule.forRoot(),
   ],
