@@ -1,12 +1,11 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { State } from '../enums/state.enum';
+import { Pipe, PipeTransform } from "@angular/core";
+import { State } from "../enums/state.enum";
 
 @Pipe({
-  name: 'filterByState'
+  name: "filterByState"
 })
 export class FilterByStatePipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
+  transform(value?: any, args?: any): any {
     /*
    console.log(value);
    let cmdlivree = [];
@@ -17,8 +16,10 @@ export class FilterByStatePipe implements PipeTransform {
    });
    return cmdlivree;
    */
-
-   return ('LIVREE' === args) ? value.filter(item =>item.state == State.LIVREE) : value.filter(item =>item.state !== State.LIVREE);
+    if (value) {
+      return "LIVREE" === args
+        ? value.filter(item => item.state == State.LIVREE)
+        : value.filter(item => item.state !== State.LIVREE);
+    }
   }
-
 }

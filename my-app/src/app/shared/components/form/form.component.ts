@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Item } from '../../interfaces/item';
 
 import { State } from '../../enums/state.enum';
+import { DateService } from '../../../core/services/date.service';
 
 @Component({
   selector: 'app-form',
@@ -14,7 +15,7 @@ export class FormComponent implements OnInit {
   public newItem : Item;
   public states = Object.values(State);
   @Output() nItem: EventEmitter<Item> = new EventEmitter;
-  constructor() { }
+  constructor(private dateService : DateService) { }
 
   ngOnInit() {
     this.init()
@@ -31,6 +32,8 @@ export class FormComponent implements OnInit {
   }
 
   public process() {
+
+    this.newItem.deliveryDate = this.dateService.dateToIso(this.newItem.deliveryDate);
     this.nItem.emit(this.newItem);
     console.log(this.newItem);
     this.init();

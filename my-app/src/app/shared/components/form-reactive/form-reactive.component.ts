@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 
 import {
   FormGroup,
@@ -18,24 +18,26 @@ export class FormReactiveComponent implements OnInit {
   public form: FormGroup;
   public states = Object.values(State);
   @Output() nItem: EventEmitter<Item> = new EventEmitter();
+  @Input() editItem :  Item;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.createForm();
+    console.log(this.editItem);
   }
 
   private createForm(): void {
     this.form = this.fb.group({
       name: [
-        "",
+        this.editItem?  this.editItem.name : "",
         Validators.compose([Validators.required, Validators.minLength(5)])
       ],
       reference: [
-        "",
+        this.editItem?  this.editItem.reference :"",
         Validators.compose([Validators.required, Validators.minLength(4)])
       ],
-      state: State.ALIVRER,
-      deliveryDate: ""
+      state:  this.editItem?  this.editItem.state : State.ALIVRER,
+      deliveryDate: this.editItem?  this.editItem.deliveryDate :""
     });
   }
 

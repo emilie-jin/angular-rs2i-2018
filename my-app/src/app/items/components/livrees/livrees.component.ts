@@ -8,11 +8,13 @@ import { AbstractComponent } from "../abstract/abstract.component";
   templateUrl: "./livrees.component.html",
   styleUrls: ["./livrees.component.css"]
 })
-export class LivreesComponent extends AbstractComponent implements OnInit{
+export class LivreesComponent extends AbstractComponent
+  implements OnInit {
   constructor(collectionService: CollectionService) {
     super(collectionService);
     super.ngOnInit();
   }
 
-  ngOnInit(){}
+  ngOnInit() {}
+
 }

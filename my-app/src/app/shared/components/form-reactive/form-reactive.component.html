@@ -16,7 +16,7 @@
     <div class="form-group">
       <input  type="date" class="form-control" placeholder="Delivery Date"  formControlName="deliveryDate">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Submit</button>
   </form>
   <!-- {{newItem | json}} -->
 </div>

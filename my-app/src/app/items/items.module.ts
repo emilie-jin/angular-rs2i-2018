@@ -11,6 +11,7 @@ import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 import { LivreesComponent } from './components/livrees/livrees.component';
 import { AddReavtiveComponent } from './components/add-reavtive/add-reavtive.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { AddReavtiveComponent } from './components/add-reavtive/add-reavtive.com
     ItemsRoutingModule,
 
   ],
-  declarations: [ListComponent, LivreesComponent, AbstractComponent, AddComponent, AddReavtiveComponent,],
+  declarations: [ListComponent, LivreesComponent, AbstractComponent, AddComponent, AddReavtiveComponent, EditComponent,],
   exports:[ListComponent,LivreesComponent]
 })
 export class ItemsModule { }

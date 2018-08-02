@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container" >
   <h1>Terminer</h1>
-  <ng-container *ngFor="let cmd of collection | filterByState : 'LIVREE'">
+  <ng-container *ngFor="let cmd of (collection | async) | filterByState : 'LIVREE'">
+
     <app-item [item]="cmd"></app-item>
   </ng-container>
 </div>
