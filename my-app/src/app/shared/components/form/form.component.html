@@ -1,7 +1,8 @@
 <div class="container">
   <form novalidate #form="ngForm" (ngSubmit)="process()">
     <div class="form-group">
-      <input name="name" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
+      <input name="name" #nom ="ngModel" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
+      <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">Champs invalide</div>
     </div>
     <div class="form-group">
       <input name="reference" [(ngModel)]="newItem.reference" type="text" class="form-control" placeholder="Enter référence" required minlength="4">

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
 import { NavComponent } from './components/nav/nav.component';
@@ -14,12 +13,18 @@ import { StateDirective } from './directives/state.directive';
 import { RouterModule } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 
+
+//external librairies
+import { IconModule } from '../icon/icon.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    IconModule
   ],
   declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe,StateDirective, FormComponent],
   exports: [NavComponent,ItemComponent,FilterByStatePipe,FormComponent],})
