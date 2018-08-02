@@ -8,6 +8,7 @@ import {
 } from "@angular/forms";
 import { State } from "../../enums/state.enum";
 import { Item } from "../../interfaces/item";
+import { DateService } from "../../../core/services/date.service";
 
 @Component({
   selector: "app-form-reactive",
@@ -19,7 +20,7 @@ export class FormReactiveComponent implements OnInit {
   public states = Object.values(State);
   @Output() nItem: EventEmitter<Item> = new EventEmitter();
   @Input() editItem :  Item;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private dateService : DateService) {}
 
   ngOnInit() {
     this.createForm();
@@ -42,6 +43,8 @@ export class FormReactiveComponent implements OnInit {
   }
 
   public process(): void {
+    this.form.get('deliveryDate').setValue(this.dateService.dateToIso(this.form.get('deliveryDate').value));
+    console.log(this.form.value);
     this.nItem.emit(this.form.value);
     this.form.reset();
     this.form.get('state').setValue(State.ALIVRER);

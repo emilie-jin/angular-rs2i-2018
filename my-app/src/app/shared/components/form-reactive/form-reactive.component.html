@@ -1,22 +1,27 @@
 <div class="container">
   <form novalidate (ngSubmit)="process()" [formGroup]="form">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter full name"  formControlName="name">
+      <input type="text" class="form-control" placeholder="Enter full name" formControlName="name">
       <div class="alert alert-danger" *ngIf="isError('name')">Champs invalide</div>
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter référence"  formControlName="reference">
+      <input type="text" class="form-control" placeholder="Enter référence" formControlName="reference">
       <div class="alert alert-danger" *ngIf="isError('reference')">Champs invalide</div>
     </div>
     <div class="form-group">
-      <select class="form-control"  formControlName="state">
+      <select class="form-control" formControlName="state">
         <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
       </select>
     </div>
     <div class="form-group">
-      <input  type="date" class="form-control" placeholder="Delivery Date"  formControlName="deliveryDate">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="deliveryDate" formControlName="deliveryDate" ngbDatepicker #d2="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+          <img src="./assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+        </button>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
   </form>
   <!-- {{newItem | json}} -->
 </div>

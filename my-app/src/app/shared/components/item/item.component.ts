@@ -21,6 +21,7 @@ export class ItemComponent implements OnInit {
   constructor(private collectionService : CollectionService,private router : Router) { }
 
   ngOnInit() {
+    console.log(this.item);
   }
 
   public changeState(state){
