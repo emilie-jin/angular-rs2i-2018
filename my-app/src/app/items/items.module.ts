@@ -10,6 +10,7 @@ import { AbstractComponent } from './components/abstract/abstract.component';
 import { AddComponent } from './components/add/add.component';
 import { ListComponent } from './components/list/list.component';
 import { LivreesComponent } from './components/livrees/livrees.component';
+import { AddReavtiveComponent } from './components/add-reavtive/add-reavtive.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { LivreesComponent } from './components/livrees/livrees.component';
     ItemsRoutingModule,
 
   ],
-  declarations: [ListComponent, LivreesComponent, AbstractComponent, AddComponent,],
+  declarations: [ListComponent, LivreesComponent, AbstractComponent, AddComponent, AddReavtiveComponent,],
   exports:[ListComponent,LivreesComponent]
 })
 export class ItemsModule { }
