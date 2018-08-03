@@ -39,8 +39,12 @@ export class CollectionService {
   }
 
   /**
-   * get one item form collection
+   * get one item from collection
    */
+  getItem(id: string): Observable<Item> {
+    const item = this.afs.doc<Item>(`collection/${id}`).valueChanges();
+    return item;
+  }
 
   /**
    * add item in collection

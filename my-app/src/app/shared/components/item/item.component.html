@@ -5,7 +5,7 @@
     <span class="state-livree" *ngIf="state.LIVREE === item.state">{{item.state}}</span> -->
     <span [appState]="item.state" >{{item.state}}</span>
     <button class="btn btn-danger float-right" (click)="deleteItem()" > <fa-icon [icon]="faTrashAlt"></fa-icon> </button>
-    <button class="btn btn-info float-right" (click)="modifyItme(item)"> <fa-icon [icon]="faEdit"></fa-icon> </button>
+    <button class="btn btn-info float-right" [routerLink]="['/items/edit', item.id]"> <fa-icon [icon]="faEdit"></fa-icon> </button>
 
 
   </div>

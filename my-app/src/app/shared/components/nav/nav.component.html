@@ -1,28 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/home" >{{title}}</a>
+  <a class="navbar-brand" routerLink="/home">{{title}}</a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav"  [ngbCollapse]="isCollapsed">
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav" (click)="isCollapsed = !isCollapsed">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/items/list" routerLinkActive="active">List</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" routerLink="/items/livrees" routerLinkActive="active">Livrées</a>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/items/add" routerLinkActive="active" >Add</a>
+        <a class="nav-link" routerLink="/items/livrees" routerLinkActive="active">Livrées</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/items/add-reactive" routerLinkActive="active" >Add Reactive</a>
+        <a class="nav-link" routerLink="/items/add" routerLinkActive="active">Add</a>
       </li>
-      <li class="nav-item pull-right">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/items/add-reactive" routerLinkActive="active">Add Reactive</a>
+      </li>
+
+      <li class="nav-item" *ngIf="!(connextion | async); else notsignin">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
+      <ng-template #notsignin>
+        <li class="nav-item">
+          <span>{{(user | async |json)}}</span>
+          <a class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>

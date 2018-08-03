@@ -19,6 +19,7 @@ import { FormsModule }   from '@angular/forms';
 import { IconModule } from '../icon/icon.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,6 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
     IconModule,
     ReactiveFormsModule
   ],
-  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe,StateDirective, FormComponent, FormReactiveComponent],
-  exports: [NavComponent,ItemComponent,FilterByStatePipe,FormComponent,FormReactiveComponent],})
+  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe,StateDirective, FormComponent, FormReactiveComponent, LoginFormComponent],
+  exports: [NavComponent,ItemComponent,FilterByStatePipe,FormComponent,FormReactiveComponent,LoginFormComponent],})
 export class SharedModule { }

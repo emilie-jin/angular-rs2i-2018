@@ -1,0 +1,16 @@
+<div class="container">
+  <form novalidate (ngSubmit)="process()" [formGroup] = "loginForm">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Email" formControlName="email">
+      <div class="alert alert-danger" *ngIf="isError('email')">Champs invalide</div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" formControlName="password">
+      <div class="alert alert-danger" *ngIf="isError('password')">Champs invalide</div>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="msg | async let message">
+      {{message}}
+    </div>
+    <button type="submit" class="btn btn-info" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+</div>
